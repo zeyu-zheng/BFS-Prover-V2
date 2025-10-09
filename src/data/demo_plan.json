@@ -1,0 +1,97 @@
+{
+  "mathd_algebra_17": {
+    "plan": [
+      "have h_sqrt_simplify : Real.sqrt (16 + 16 * a) = 4 * Real.sqrt (1 + a)",
+      "have h_eq_transformed : Real.sqrt (4 + 4 * Real.sqrt (1 + a)) + Real.sqrt (1 + Real.sqrt (1 + a)) = 6",
+      "have h_sum_eq : 3 * Real.sqrt (1 + Real.sqrt (1 + a)) = 6",
+      "have h_sqrt_val : Real.sqrt (1 + Real.sqrt (1 + a)) = 2",
+      "have h_inner_sqrt : Real.sqrt (1 + a) = 3",
+      "h_final_eq : 1 + a = 9"
+    ],
+    "progress": 0
+  },
+  "aime_1988_p8": {
+    "plan": [
+      "have h1 : (14 + 38) * f 14 38 = 38 * f 14 52",
+      "have h2 : (14 + 24) * f 14 24 = 24 * f 14 38",
+      "have h3 : (14 + 10) * f 14 10 = 10 * f 14 24",
+      "have h4 : (10 + 4) * f 10 4 = 4 * f 10 14",
+      "have h5 : (4 + 2) * f 4 2 = 2 * f 4 6",
+      "have h6 : f 4 2 = 4",
+      "have h7 : f 4 6 = 12",
+      "have h8 : f 4 10 = 20",
+      "have h9 : f 10 14 = 70",
+      "have h10 : f 14 24 = 168",
+      "have h11 : f 14 38 = 266",
+      "have h12 : f 14 52 = 364"
+    ],
+    "progress": 0
+  },
+  "mathd_numbertheory_552": {
+    "plan": [
+      "have h_lin_comb_val : ∀ (x : ℕ+), 5 * f x - 12 * g x = 11",
+      "have h_dvd_lin_comb : ∀ (x : ℕ+), (h x) ∣ (5 * f x - 12 * g x)",
+      "have h_dvd_11 : ∀ (x : ℕ+), h x ∣ 11",
+      "have h_range_subset_divisors : Set.range h ⊆ (Nat.divisors (11 : ℕ))",
+      "have h_divisors_11_is_set : (Nat.divisors (11 : ℕ) : Set ℕ) = ({1, 11} : Set ℕ)",
+      "have h_range_subset : Set.range h ⊆ ({1, 11} : Set ℕ)",
+      "have h_one_is_in_range : 1 ∈ Set.range h",
+      "have h_eleven_is_in_range : 11 ∈ Set.range h",
+      "have h_range_is_exactly_1_and_11 : Set.range h = ({1, 11} : Set ℕ)"
+    ],
+    "progress": 0
+  },
+  "induction_pord1p1on2powklt5on2": {
+    "plan": [
+      "have h_n_ge_2_lemma : ∀ n : ℕ, 2 ≤ n → (∏ k in (Finset.Icc 1 n : Finset ℕ), (1 + (1:ℝ) / 2^k)) ≤ (5/2) * (1 - 1/2^n)",
+      "have h_lemma_base_case : (∏ k in (Finset.Icc 1 2 : Finset ℕ), (1 + (1:ℝ) / 2^k)) = (5/2) * (1 - 1 / 2^2)",
+      "have h_prod_step (n : ℕ) (hn : 1 ≤ n) : (∏ k in (Finset.Icc 1 (n + 1) : Finset ℕ), (1 + (1:ℝ) / 2^k)) = (∏ k in (Finset.Icc 1 n : Finset ℕ), (1 + (1:ℝ) / 2^k)) * (1 + 1 / 2^(n+1))",
+      "have h_algebraic_step (n : ℕ) (hn : 2 ≤ n) : ((5:ℝ)/2 * (1 - 1/2^n)) * (1 + 1/2^(n+1)) ≤ (5/2) * (1 - 1/2^(n+1))",
+      "have h_algebraic_expansion (n : ℕ) : (1 - 1/2^n) * (1 + 1/2^(n+1)) = 1 - 1/2^(n+1) - 1/2^(2*n+1)",
+      "have h_n1_case : (∏ k in (Finset.Icc 1 1 : Finset ℕ), (1 + (1:ℝ) / 2^k)) = 3/2",
+      "have h_final_inequality (n : ℕ) (h_n_pos : 0 < n) : (5/2 : ℝ) * (1 - 1/2^n) < 5/2"
+    ],
+    "progress": 0
+  },
+  "amc12a_2008_p25": {
+    "plan": [
+      "have h_complex_recurrence : ∀ n, (a (n + 1) : ℂ) + (b (n + 1) : ℂ) * Complex.I = (((Real.sqrt 3 : ℝ) : ℂ) + Complex.I) * ((a n : ℂ) + (b n : ℂ) * Complex.I)",
+      "have h_general_term : ∀ k : ℕ, (a (k + 1) : ℂ) + (b (k + 1) : ℂ) * Complex.I = ((((Real.sqrt 3 : ℝ) : ℂ) + Complex.I) ^ k) * ((a 1 : ℂ) + (b 1 : ℂ) * Complex.I)",
+      "have h_complex_base_polar : ((Real.sqrt 3 : ℝ) : ℂ) + Complex.I = (2 : ℂ) * Complex.exp (Complex.I * (Real.pi / 6))",
+      "have h_complex_base_pow_99 : (((Real.sqrt 3 : ℝ) : ℂ) + Complex.I) ^ 99 = (2 : ℂ) ^ 99 * Complex.I",
+      "have h_z100 : (a 100 : ℂ) + (b 100 : ℂ) * Complex.I = (2 : ℂ) + (4 : ℂ) * Complex.I",
+      "have h_z1_relation : (a 100 : ℂ) + (b 100 : ℂ) * Complex.I = ((((Real.sqrt 3 : ℝ) : ℂ) + Complex.I) ^ 99) * ((a 1 : ℂ) + (b 1 : ℂ) * Complex.I)",
+      "have h_z1_equation : (2 : ℂ) + (4 : ℂ) * Complex.I = ((2 : ℂ) ^ 99 * Complex.I) * ((a 1 : ℂ) + (b 1 : ℂ) * Complex.I)",
+      "have h_z1_solved : (a 1 : ℂ) + (b 1 : ℂ) * Complex.I = ((2 : ℂ) + (4 : ℂ) * Complex.I) / ((2 : ℂ) ^ 99 * Complex.I)",
+      "have h_z1_simplified : (a 1 : ℂ) + (b 1 : ℂ) * Complex.I = ((4 : ℂ) - (2 : ℂ) * Complex.I) / ((2 : ℂ) ^ 99)",
+      "have h_z1_final_form : (a 1 : ℂ) + (b 1 : ℂ) * Complex.I = (1 : ℂ) / (2 : ℂ) ^ 97 - ((1 : ℂ) / (2 : ℂ) ^ 98) * Complex.I",
+      "have h_a1_val : a 1 = 1 / (2 : ℝ) ^ 97",
+      "have h_b1_val : b 1 = -1 / (2 : ℝ) ^ 98",
+      "have h_sum : a 1 + b 1 = 1 / (2 : ℝ) ^ 97 - 1 / (2 : ℝ) ^ 98"
+    ],
+    "progress": 0
+  },
+  "algebra_sum1onsqrt2to1onsqrt10000lt198": {
+    "plan": [
+      "have h_inequality : ∀ k : ℕ, 2 ≤ k → (1 : ℝ) / Real.sqrt (k : ℝ) < (2 : ℝ) * (Real.sqrt (k : ℝ) - Real.sqrt ((k : ℝ) - 1))",
+      "have h_sum_bound : ∑ k in (Finset.Icc (2 : ℕ) 10000 : Finset ℕ), (1 : ℝ) / Real.sqrt (k : ℝ) < ∑ k in (Finset.Icc (2 : ℕ) 10000 : Finset ℕ), (2 : ℝ) * (Real.sqrt (k : ℝ) - Real.sqrt ((k : ℝ) - 1))",
+      "have h_telescoping_sum : ∑ k in (Finset.Icc (2 : ℕ) 10000 : Finset ℕ), (2 : ℝ) * (Real.sqrt (k : ℝ) - Real.sqrt ((k : ℝ) - 1)) = (2 : ℝ) * (Real.sqrt (10000 : ℝ) - Real.sqrt (1 : ℝ))",
+      "have h_sqrt_10000 : Real.sqrt (10000 : ℝ) = (100 : ℝ)",
+      "have h_sqrt_1 : Real.sqrt (1 : ℝ) = (1 : ℝ)",
+      "have h_rhs_value : (2 : ℝ) * ((100 : ℝ) - (1 : ℝ)) = (198 : ℝ)"
+    ],
+    "progress": 0
+  },
+  "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown": {
+    "plan": [
+      "have h_geom_prog_rel : ∀ y : ℕ, 4^y * 9^y = (6^y)^2",
+      "have h_inequality : ∀ y : ℕ, 6^y ≤ 4^y + 9^y",
+      "have h_f_identity_expanded : ∀ y : ℕ, f (2 * y) = (4^y + 6^y + 9^y) * (4^y + 9^y - 6^y)",
+      "have h_f_identity : ∀ y : ℕ, f (2 * y) = f y * (4^y + 9^y - 6^y)",
+      "have h_dvd_double : ∀ y : ℕ, f y ∣ f (2 * y)",
+      "have h_chain : ∀ i : ℕ, f (2^i) ∣ f (2^(i+1))",
+      "have h_dvd_le : ∀ i j : ℕ, i ≤ j → f (2^i) ∣ f (2^j)"
+    ],
+    "progress": 0
+  }
+}
