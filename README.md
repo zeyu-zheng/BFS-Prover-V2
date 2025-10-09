@@ -82,11 +82,7 @@ The planner agent (a general-purpose reasoning model) decomposes the main theore
 
 ## Use BFS-Prover-V2 in Lean (via LLMLean)
 
-<div align="center">
-  <video src="./assets/demo.mp4" width="100%" controls>
-    Your browser does not support the video tag.
-  </video>
-</div>
+https://github.com/user-attachments/assets/5e4d00b8-6ea1-465c-92dd-bf85a8c48cb1
 
 <p align="center">
 BFS-Prover-V2 is integrated with <a href="https://github.com/cmu-l3/llmlean">LLMLean</a>, enabling interactive theorem proving in VS Code.
@@ -119,7 +115,7 @@ numSamples = "5"
 3. Add LLMLean to lakefile in your Lean project
 ```lean
 -- lakefile.lean
-require llmlean from git "https://github.com/zeyu-zheng/llmlean.git" @ "bfs-pr"
+require llmlean from git "https://github.com/cmu-l3/llmlean.git"
 ```
 
 or
@@ -128,8 +124,7 @@ or
 # lakefile.toml
 [[require]]
 name = "llmlean"
-git = "https://github.com/zeyu-zheng/llmlean.git"
-rev = "bfs-pr"
+git = "https://github.com/cmu-l3/llmlean.git"
 ```
 
 4. Use in Lean
